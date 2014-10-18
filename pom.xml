@@ -1196,6 +1196,10 @@
             <reuseForks>true</reuseForks>
             <runOrder>alphabetical</runOrder>
             <argLine>-XX:MaxPermSize=256m</argLine>
+            <includes>
+              <include>**/*Test.java</include>
+              <include>**/*TestSuite.java</include>
+            </includes>
             <systemPropertyVariables>
               <user.timezone>Europe/Paris</user.timezone>
               <user.language>fr</user.language>
