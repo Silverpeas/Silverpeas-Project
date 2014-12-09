@@ -1216,7 +1216,7 @@
                       <version>${wildfly.version}</version>
                       <type>zip</type>
                       <overWrite>false</overWrite>
-                      <outputDirectory>target</outputDirectory>
+                      <outputDirectory>${temp.directory}</outputDirectory>
                     </artifactItem>
                   </artifactItems>
                 </configuration>
@@ -1231,12 +1231,12 @@
               <forkCount>1</forkCount>
               <reuseForks>false</reuseForks>
               <environmentVariables>
-                <JBOSS_HOME>${project.build.directory}/wildfly-${wildfly.version}</JBOSS_HOME>
+                <JBOSS_HOME>${temp.directory}/wildfly-${wildfly.version}</JBOSS_HOME>
               </environmentVariables>
               <systemPropertyVariables>
                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-                <jboss.home>${project.build.directory}/wildfly-${wildfly.version}</jboss.home>
-                <module.path>${project.build.directory}/wildfly-${wildfly.version}/modules</module.path>
+                <jboss.home>${temp.directory/wildfly-${wildfly.version}</jboss.home>
+                <module.path>${temp.directory}/wildfly-${wildfly.version}/modules</module.path>
                 <jboss.server.config.file.name>standalone-full.xml</jboss.server.config.file.name>
               </systemPropertyVariables>
               <redirectTestOutputToFile>false</redirectTestOutputToFile>
