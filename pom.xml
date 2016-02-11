@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (C) 2000 - 2013 Silverpeas
+    Copyright (C) 2000 - 2016 Silverpeas
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -31,13 +31,19 @@
 
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
-  <artifactId>parent</artifactId>
+  <artifactId>silverpeas-project</artifactId>
   <groupId>org.silverpeas</groupId>
-  <version>28-SNAPSHOT</version>
+  <version>1-SNAPSHOT</version>
   <name>Parent POM</name>
   <description>
-    The root POM of all the projects that make up the eponym collaborative Web portal
+    Silverpeas is an open-source project to build and run a Collaborative and Social Web Portal
+    in order to facilitate the collaboration and the sharing among the users.
   </description>
+
+  <organization>
+    <name>Silverpeas</name>
+    <url>http://www.silverpeas.org</url>
+  </organization>
 
   <scm>
     <connection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</connection>
@@ -564,7 +570,7 @@
   </properties>
 
   <prerequisites>
-    <maven>3.0.4</maven>
+    <maven>3.2.5</maven>
   </prerequisites>
 
 </project>
