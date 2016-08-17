@@ -106,7 +106,7 @@
       <dependency>
         <groupId>org.silverpeas</groupId>
         <artifactId>silverpeas-dependencies-bom</artifactId>
-        <version>1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -114,7 +114,7 @@
       <dependency>
         <groupId>org.silverpeas</groupId>
         <artifactId>silverpeas-test-dependencies-bom</artifactId>
-        <version>1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -446,7 +446,6 @@
               <systemPropertyVariables>
                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                 <jboss.home>${temp.directory/wildfly-${wildfly.version}</jboss.home>
-                <module.path>${temp.directory}/wildfly-${wildfly.version}/modules</module.path>
                 <jboss.server.config.file.name>standalone-full.xml</jboss.server.config.file.name>
               </systemPropertyVariables>
               <redirectTestOutputToFile>false</redirectTestOutputToFile>
@@ -533,7 +532,7 @@
   <properties>
     <wagon.version>2.0</wagon.version>
     <config.version>2.3-SNAPSHOT</config.version>
-    <wildfly.version>8.2.1.Final</wildfly.version>
+    <wildfly.version>10.0.0.Final</wildfly.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netbeans.hint.license>agpl30</netbeans.hint.license>
