@@ -320,6 +320,12 @@
 
   <profiles>
     <profile>
+      <id>skipMinify</id>
+      <properties>
+        <maven.yuicompressor.skip>true</maven.yuicompressor.skip>
+      </properties>
+    </profile>
+    <profile>
       <id>integration-test</id>
       <activation>
         <property>
