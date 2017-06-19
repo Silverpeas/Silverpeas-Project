@@ -121,6 +121,17 @@
     </dependencies>
   </dependencyManagement>
 
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <wagon.version>2.10</wagon.version>
+    <wildfly.version>10.1.0.Final</wildfly.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <netbeans.hint.license>agpl30</netbeans.hint.license>
+    <gpg.passphrase>thephrase</gpg.passphrase>
+  </properties>
+
   <build>
     <pluginManagement>
       <plugins>
@@ -483,15 +494,6 @@
       </build>
     </profile>
   </profiles>
-
-  <properties>
-    <wagon.version>2.10</wagon.version>
-    <wildfly.version>10.1.0.Final</wildfly.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <netbeans.hint.license>agpl30</netbeans.hint.license>
-    <gpg.passphrase>thephrase</gpg.passphrase>
-  </properties>
 
   <prerequisites>
     <maven>3.2.5</maven>
