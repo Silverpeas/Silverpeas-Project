@@ -106,7 +106,7 @@
       <dependency>
         <groupId>org.silverpeas</groupId>
         <artifactId>silverpeas-dependencies-bom</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0-alpha3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -114,7 +114,7 @@
       <dependency>
         <groupId>org.silverpeas</groupId>
         <artifactId>silverpeas-test-dependencies-bom</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0-alpha3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
