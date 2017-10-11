@@ -31,7 +31,7 @@
   <packaging>pom</packaging>
   <artifactId>silverpeas-project</artifactId>
   <groupId>org.silverpeas</groupId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-rc1</version>
   <name>Parent POM</name>
   <description>
     Silverpeas is an open-source project to build and run a Collaborative and Social Web Portal
@@ -47,7 +47,7 @@
     <connection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</connection>
     <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</developerConnection>
     <url>http://gitub.com/Silverpeas/Silverpeas-Parent.git</url>
-    <tag>HEAD</tag>
+    <tag>1.0-rc1</tag>
   </scm>
 
   <repositories>
