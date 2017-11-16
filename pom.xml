@@ -385,7 +385,7 @@
         </property>
       </activation>
       <properties>
-        <jcr.home>${project.build.directory}/jcr</jcr.home>
+        <jcr.home>${temp.directory}/jcr</jcr.home>
         <jcr.conf>${jcr.home}/repository.xml</jcr.conf>
       </properties>
       <build>
