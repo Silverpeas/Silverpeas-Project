@@ -189,7 +189,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
+          <version>2.20.1</version>
           <configuration>
             <forkCount>2C</forkCount>
             <reuseForks>true</reuseForks>
@@ -392,6 +392,7 @@
       <properties>
         <jcr.home>${temp.directory}/jcr</jcr.home>
         <jcr.conf>${jcr.home}/repository.xml</jcr.conf>
+        <wildfly.home>${temp.directory}/wildfly-${wildfly.version}</wildfly.home>
       </properties>
       <build>
         <testResources>
@@ -449,7 +450,7 @@
                     <include>**/*ITSuite.java</include>
                   </includes>
                   <environmentVariables>
-                    <JBOSS_HOME>${temp.directory}/wildfly-${wildfly.version}</JBOSS_HOME>
+                    <JBOSS_HOME>${wildfly.home}</JBOSS_HOME>
                   </environmentVariables>
                   <systemPropertyVariables>
                     <arquillian.launch>wildfly-managed</arquillian.launch>
@@ -463,6 +464,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
+              <skip>${skip.tests}</skip>
               <excludes>
                 <exclude>**/*IT.java</exclude>
                 <exclude>**/*ITSuite.java</exclude>
