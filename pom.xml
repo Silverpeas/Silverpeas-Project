@@ -316,6 +316,11 @@
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>1.12</version>
         </plugin>
+        <plugin>
+          <groupId>org.wildfly.plugins</groupId>
+          <artifactId>wildfly-maven-plugin</artifactId>
+          <version>1.2.1.Final</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <extensions>
@@ -387,7 +392,6 @@
       <properties>
         <jcr.home>${temp.directory}/jcr</jcr.home>
         <jcr.conf>${jcr.home}/repository.xml</jcr.conf>
-        <wildfly.home>${temp.directory}/wildfly-${wildfly.version}</wildfly.home>
       </properties>
       <build>
         <testResources>
@@ -447,6 +451,9 @@
                   <environmentVariables>
                     <JBOSS_HOME>${temp.directory}/wildfly-${wildfly.version}</JBOSS_HOME>
                   </environmentVariables>
+                  <systemPropertyVariables>
+                    <arquillian.launch>wildfly-managed</arquillian.launch>
+                  </systemPropertyVariables>
                   <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
               </execution>
@@ -464,6 +471,13 @@
           </plugin>
         </plugins>
       </build>
+      <dependencies>
+        <dependency>
+          <groupId>org.wildfly.arquillian</groupId>
+          <artifactId>wildfly-arquillian-container-managed</artifactId>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
     </profile>
     <profile>
       <id>license</id>
