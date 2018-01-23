@@ -125,12 +125,11 @@
     <silverpeas.bom.version>1.0-SNAPSHOT</silverpeas.bom.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <wagon.version>2.10</wagon.version>
+    <wagon.version>3.0.0</wagon.version>
     <wildfly.version>10.1.0.Final</wildfly.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netbeans.hint.license>agpl30</netbeans.hint.license>
-    <gpg.passphrase>thephrase</gpg.passphrase>
   </properties>
 
   <build>
@@ -298,6 +297,10 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
           <version>1.6</version>
+          <configuration>
+            <keyname>${gpg.keyname}</keyname>
+            <passphraseServerId>${gpg.keyname}</passphraseServerId>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>net.sourceforge.maven-taglib</groupId>
@@ -324,30 +327,13 @@
           <artifactId>wildfly-maven-plugin</artifactId>
           <version>1.2.1.Final</version>
         </plugin>
+        <plugin>
+          <groupId>pl.project13.maven</groupId>
+          <artifactId>git-commit-id-plugin</artifactId>
+          <version>2.2.4</version>
+        </plugin>
       </plugins>
     </pluginManagement>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh-external</artifactId>
-        <version>${wagon.version}</version>
-      </extension>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ftp</artifactId>
-        <version>${wagon.version}</version>
-      </extension>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh</artifactId>
-        <version>${wagon.version}</version>
-      </extension>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh-common</artifactId>
-        <version>${wagon.version}</version>
-      </extension>
-    </extensions>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
