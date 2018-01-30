@@ -31,7 +31,7 @@
   <packaging>pom</packaging>
   <artifactId>silverpeas-project</artifactId>
   <groupId>org.silverpeas</groupId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Parent POM</name>
   <description>
     Silverpeas is an open-source project to build and run a Collaborative and Social Web Portal
@@ -122,7 +122,7 @@
   <properties>
     <!-- property used by the CI to both deploy a build version and release the next stable version -->
     <next.release>1.0</next.release>
-    <silverpeas.bom.version>1.0-SNAPSHOT</silverpeas.bom.version>
+    <silverpeas.bom.version>1.0</silverpeas.bom.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <wagon.version>3.0.0</wagon.version>
