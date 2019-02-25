@@ -126,7 +126,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <wagon.version>3.0.0</wagon.version>
-    <wildfly.version>13.0.0.Final</wildfly.version>
+    <wildfly.version>14.0.1.Final</wildfly.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netbeans.hint.license>agpl30</netbeans.hint.license>
