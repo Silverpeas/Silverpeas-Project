@@ -297,9 +297,9 @@
           <version>3.0</version>
         </plugin>
         <plugin>
-          <groupId>net.alchim31.maven</groupId>
-          <artifactId>yuicompressor-maven-plugin</artifactId>
-          <version>1.5.1</version>
+          <groupId>org.silverpeas.maven</groupId>
+          <artifactId>silverpeas-ui-compressor-maven-plugin</artifactId>
+          <version>1.6</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
