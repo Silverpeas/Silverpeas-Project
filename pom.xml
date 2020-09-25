@@ -31,7 +31,7 @@
   <packaging>pom</packaging>
   <artifactId>silverpeas-project</artifactId>
   <groupId>org.silverpeas</groupId>
-  <version>1.2</version>
+  <version>1.2.1-SNAPSHOT</version>
   <name>Parent POM</name>
   <description>
     Silverpeas is an open-source project to build and run a Collaborative and Social Web Portal
@@ -40,13 +40,13 @@
 
   <organization>
     <name>Silverpeas</name>
-    <url>http://www.silverpeas.org</url>
+    <url>https://www.silverpeas.org</url>
   </organization>
 
   <scm>
     <connection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</connection>
     <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</developerConnection>
-    <url>http://gitub.com/Silverpeas/Silverpeas-Parent.git</url>
+    <url>https://gitub.com/Silverpeas/Silverpeas-Parent.git</url>
     <tag>1.2</tag>
   </scm>
 
@@ -55,7 +55,7 @@
       <id>Silverpeas</id>
       <layout>default</layout>
       <name>Silverpeas Repository</name>
-      <url>http://www.silverpeas.org/nexus/content/groups/silverpeas</url>
+      <url>https://www.silverpeas.org/nexus/content/groups/silverpeas</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -70,7 +70,7 @@
       <id>Silverpeas</id>
       <layout>default</layout>
       <name>Silverpeas Repository</name>
-      <url>http://www.silverpeas.org/nexus/content/groups/silverpeas</url>
+      <url>https://www.silverpeas.org/nexus/content/groups/silverpeas</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -85,13 +85,13 @@
       <id>silverpeas</id>
       <name>Repository Silverpeas</name>
       <layout>default</layout>
-      <url>http://www.silverpeas.org/nexus/content/repositories/releases/</url>
+      <url>https://www.silverpeas.org/nexus/content/repositories/releases/</url>
     </repository>
     <snapshotRepository>
       <id>silverpeas-snapshots</id>
       <name>Snapshots Repository Silverpeas</name>
       <layout>default</layout>
-      <url>http://www.silverpeas.org/nexus/content/repositories/snapshots/</url>
+      <url>https://www.silverpeas.org/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
     <site>
       <id>silverpeas_repository</id>
@@ -121,7 +121,7 @@
 
   <properties>
     <!-- property used by the CI to both deploy a build version and release the next stable version -->
-    <next.release>1.2</next.release>
+    <next.release>1.2.1</next.release>
     <silverpeas.bom.version>1.2</silverpeas.bom.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
