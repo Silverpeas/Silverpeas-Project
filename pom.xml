@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (C) 2000 - 2020 Silverpeas
+    Copyright (C) 2000 - 2021 Silverpeas
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -31,7 +31,7 @@
   <packaging>pom</packaging>
   <artifactId>silverpeas-project</artifactId>
   <groupId>org.silverpeas</groupId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.5-SNAPSHOT</version>
   <name>Parent POM</name>
   <description>
     Silverpeas is an open-source project to build and run a Collaborative and Social Web Portal
@@ -121,8 +121,8 @@
 
   <properties>
     <!-- property used by the CI to both deploy a build version and release the next stable version -->
-    <next.release>1.4</next.release>
-    <silverpeas.bom.version>1.4-SNAPSHOT</silverpeas.bom.version>
+    <next.release>1.5</next.release>
+    <silverpeas.bom.version>1.5-SNAPSHOT</silverpeas.bom.version>
     <maven.compiler.release>11</maven.compiler.release>
     <wagon.version>3.3.3</wagon.version>
     <wildfly.version>20.0.1.Final</wildfly.version>
