@@ -470,9 +470,11 @@
                   <environmentVariables>
                     <JBOSS_HOME>${wildfly.home}</JBOSS_HOME>
                   </environmentVariables>
+                  <!--
                   <systemPropertyVariables>
                     <arquillian.launch>wildfly-managed</arquillian.launch>
                   </systemPropertyVariables>
+                  -->
                   <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
               </execution>
@@ -494,7 +496,7 @@
       <dependencies>
         <dependency>
           <groupId>org.wildfly.arquillian</groupId>
-          <artifactId>wildfly-arquillian-container-managed</artifactId>
+          <artifactId>wildfly-arquillian-container-remote</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
