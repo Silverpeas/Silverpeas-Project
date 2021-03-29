@@ -55,7 +55,7 @@
       <id>Silverpeas</id>
       <layout>default</layout>
       <name>Silverpeas Repository</name>
-      <url>https//www.silverpeas.org/nexus/content/groups/silverpeas</url>
+      <url>https://www.silverpeas.org/nexus/content/groups/silverpeas</url>
       <releases>
         <enabled>true</enabled>
       </releases>
