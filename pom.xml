@@ -127,7 +127,7 @@
     <silverpeas.bom.version>1.5-SNAPSHOT</silverpeas.bom.version>
     <maven.compiler.release>11</maven.compiler.release>
     <wagon.version>3.3.3</wagon.version>
-    <wildfly.version>20.0.1.Final</wildfly.version>
+    <wildfly.version>23.0.1.Final</wildfly.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netbeans.hint.license>agpl30</netbeans.hint.license>
@@ -463,6 +463,7 @@
                   <goal>verify</goal>
                 </goals>
                 <configuration>
+                  <skipAfterFailureCount>1</skipAfterFailureCount>
                   <includes>
                     <include>**/*IT.java</include>
                     <include>**/*ITSuite.java</include>
@@ -470,9 +471,6 @@
                   <environmentVariables>
                     <JBOSS_HOME>${wildfly.home}</JBOSS_HOME>
                   </environmentVariables>
-                  <systemPropertyVariables>
-                    <arquillian.launch>wildfly-managed</arquillian.launch>
-                  </systemPropertyVariables>
                   <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
               </execution>
@@ -494,7 +492,7 @@
       <dependencies>
         <dependency>
           <groupId>org.wildfly.arquillian</groupId>
-          <artifactId>wildfly-arquillian-container-managed</artifactId>
+          <artifactId>wildfly-arquillian-container-remote</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
