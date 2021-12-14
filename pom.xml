@@ -31,7 +31,7 @@
   <packaging>pom</packaging>
   <artifactId>silverpeas-project</artifactId>
   <groupId>org.silverpeas</groupId>
-  <version>1.4.1-SNAPSHOT</version>
+  <version>1.4.1</version>
   <name>Parent POM</name>
   <description>
     Silverpeas is an open-source project to build and run a Collaborative and Social Web Portal
@@ -47,7 +47,7 @@
     <connection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</connection>
     <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</developerConnection>
     <url>https://gitub.com/Silverpeas/Silverpeas-Parent.git</url>
-    <tag>HEAD</tag>
+    <tag>1.4.1</tag>
   </scm>
 
   <repositories>
@@ -122,7 +122,7 @@
   <properties>
     <!-- property used by the CI to both deploy a build version and release the next stable version -->
     <next.release>1.4.1</next.release>
-    <silverpeas.bom.version>1.4.1-SNAPSHOT</silverpeas.bom.version>
+    <silverpeas.bom.version>1.4.1</silverpeas.bom.version>
     <maven.compiler.release>11</maven.compiler.release>
     <wagon.version>3.3.3</wagon.version>
     <wildfly.version>20.0.1.Final</wildfly.version>
