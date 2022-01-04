@@ -127,13 +127,29 @@
     <silverpeas.bom.version>1.5-SNAPSHOT</silverpeas.bom.version>
     <maven.compiler.release>11</maven.compiler.release>
     <wagon.version>3.3.3</wagon.version>
-    <wildfly.version>23.0.1.Final</wildfly.version>
+    <wildfly.version>24.0.1.Final</wildfly.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netbeans.hint.license>agpl30</netbeans.hint.license>
   </properties>
 
   <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>**/*.properties</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>**/*.properties</exclude>
+        </excludes>
+      </testResource>
+    </testResources>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -144,7 +160,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
           <configuration>
             <encoding>UTF-8</encoding>
           </configuration>
@@ -152,12 +168,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.1.2</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.3</version>
+          <version>3.3.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -231,7 +247,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.9.0</version>
+          <version>3.10.0</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.wagon</groupId>
@@ -243,7 +259,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.1</version>
           <configuration>
             <quiet>true</quiet>
             <failOnError>false</failOnError>
@@ -271,12 +287,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.1.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.6</version>
+          <version>3.0.1</version>
           <configuration>
             <keyname>${gpg.keyname}</keyname>
             <passphraseServerId>${gpg.keyname}</passphraseServerId>
@@ -290,7 +306,7 @@
         <plugin>
           <groupId>com.mycila</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>3.0</version>
+          <version>4.1</version>
         </plugin>
         <plugin>
           <groupId>org.silverpeas.maven</groupId>
@@ -300,22 +316,22 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.wildfly.plugins</groupId>
           <artifactId>wildfly-maven-plugin</artifactId>
-          <version>2.0.2.Final</version>
+          <version>2.1.0.Final</version>
         </plugin>
         <plugin>
           <groupId>pl.project13.maven</groupId>
           <artifactId>git-commit-id-plugin</artifactId>
-          <version>4.0.4</version>
+          <version>4.9.10</version>
         </plugin>
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.6</version>
+          <version>0.8.7</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -417,7 +433,7 @@
       <build>
         <testResources>
           <testResource>
-            <directory>src/integration-test/resources</directory>
+            <directory>src/test/resources</directory>
             <filtering>true</filtering>
             <includes>
               <include>**/*.properties</include>
@@ -426,6 +442,23 @@
           <testResource>
             <directory>src/test/resources</directory>
             <filtering>false</filtering>
+            <excludes>
+              <exclude>**/*.properties</exclude>
+            </excludes>
+          </testResource>
+          <testResource>
+            <directory>src/integration-test/resources</directory>
+            <filtering>true</filtering>
+            <includes>
+              <include>**/*.properties</include>
+            </includes>
+          </testResource>
+          <testResource>
+            <directory>src/integration-test/resources</directory>
+            <filtering>false</filtering>
+            <excludes>
+              <exclude>**/*.properties</exclude>
+            </excludes>
           </testResource>
         </testResources>
         <plugins>
