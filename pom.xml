@@ -46,9 +46,9 @@
   </organization>
 
   <scm>
-    <connection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</connection>
-    <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-Parent.git</developerConnection>
-    <url>https://gitub.com/Silverpeas/Silverpeas-Parent.git</url>
+    <connection>scm:git:git@github.com:Silverpeas/Silverpeas-Project.git</connection>
+    <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-Project.git</developerConnection>
+    <url>https://gitub.com/Silverpeas/Silverpeas-Project.git</url>
     <tag>HEAD</tag>
   </scm>
 
