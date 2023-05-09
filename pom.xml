@@ -127,7 +127,7 @@
     <silverpeas.bom.version>1.6-SNAPSHOT</silverpeas.bom.version>
     <maven.compiler.release>11</maven.compiler.release>
     <wagon.version>3.5.3</wagon.version>
-    <wildfly.version>26.1.2.Final</wildfly.version>
+    <wildfly.version>26.1.3.Final</wildfly.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netbeans.hint.license>agpl30</netbeans.hint.license>
