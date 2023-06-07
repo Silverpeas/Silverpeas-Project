@@ -333,6 +333,30 @@
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>0.8.8</version>
         </plugin>
+        <plugin>
+          <groupId>com.qmino</groupId>
+          <artifactId>miredot-plugin</artifactId>
+          <version>2.4.1-Java11</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>restdoc</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <organizationId>6f45017e-a72e-4de7-91c1-59b3f11b5598</organizationId>
+            <restModel>
+              <restFramework>
+                <name>jax-rs</name>
+              </restFramework>
+            </restModel>
+            <output>
+              <html></html>
+            </output>
+            <!-- insert other configuration here (optional) -->
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
