@@ -320,9 +320,9 @@
           <version>4.0.0.Final</version>
         </plugin>
         <plugin>
-          <groupId>pl.project13.maven</groupId>
-          <artifactId>git-commit-id-plugin</artifactId>
-          <version>4.9.10</version>
+          <groupId>io.github.git-commit-id</groupId>
+          <artifactId>git-commit-id-maven-plugin</artifactId>
+          <version>10.0.0</version>
         </plugin>
         <plugin>
           <groupId>org.jacoco</groupId>
@@ -330,27 +330,26 @@
           <version>0.8.13</version>
         </plugin>
         <plugin>
-          <groupId>com.qmino</groupId>
-          <artifactId>miredot-plugin</artifactId>
-          <version>2.4.1-Java11</version>
+          <!-- Smart-Doc lives under two groupIds: com.ly.smart-doc stops at 3.1.2 (Sept. 2025)
+               whereas the com.github.shalousun line is still released, hence 4.x. Beware that
+               com.ly.smart-doc 3.1.1 and 3.1.2 regressed on the JAX-RS template and title every
+               endpoint com.ly.doc.model.DocJavaMethod instead of its Javadoc; 4.0.0 does not. -->
+          <groupId>com.github.shalousun</groupId>
+          <artifactId>smart-doc-maven-plugin</artifactId>
+          <version>4.0.0</version>
           <executions>
             <execution>
+              <phase>package</phase>
               <goals>
-                <goal>restdoc</goal>
+                <goal>html</goal>
               </goals>
             </execution>
           </executions>
           <configuration>
-            <organizationId>6f45017e-a72e-4de7-91c1-59b3f11b5598</organizationId>
-            <restModel>
-              <restFramework>
-                <name>jax-rs</name>
-              </restFramework>
-            </restModel>
-            <output>
-              <html></html>
-            </output>
-            <!-- insert other configuration here (optional) -->
+            <!-- the framework, the title and the output directory are set per module in its
+                 own smart-doc.json; a module without that file is simply skipped. -->
+            <configFile>${project.basedir}/smart-doc.json</configFile>
+            <projectName>${project.name}</projectName>
           </configuration>
         </plugin>
       </plugins>
