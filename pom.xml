@@ -128,7 +128,7 @@
     <maven.compiler.release>21</maven.compiler.release>
     <surefire.version>3.5.2</surefire.version>
     <wagon.version>3.5.3</wagon.version>
-    <wildfly.version>34.0.1.Final</wildfly.version>
+    <wildfly.version>39.0.1.Final</wildfly.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netbeans.hint.license>agpl30</netbeans.hint.license>
