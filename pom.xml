@@ -282,6 +282,12 @@
                 <placement>a</placement>
                 <head>Implementation Note:</head>
               </tag>
+              <!-- @ignore is understood by Smart-Doc, to which it indicates the method isn't an
+                   endpoint of the REST API; it has no meaning for Javadoc, hence isn't output. -->
+              <tag>
+                <name>ignore</name>
+                <placement>X</placement>
+              </tag>
             </tags>
           </configuration>
         </plugin>
@@ -339,7 +345,18 @@
           <version>4.0.0</version>
           <executions>
             <execution>
+              <id>restapi-doc</id>
               <phase>package</phase>
+              <goals>
+                <goal>html</goal>
+              </goals>
+            </execution>
+            <!-- the doc is generated into target/site and hence has to be produced before the
+                 site itself; the execution above isn't triggered by the site lifecycle, which
+                 never runs the package phase. -->
+            <execution>
+              <id>restapi-doc-for-site</id>
+              <phase>pre-site</phase>
               <goals>
                 <goal>html</goal>
               </goals>
