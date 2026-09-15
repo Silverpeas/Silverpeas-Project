@@ -104,6 +104,18 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-annotations-jakarta</artifactId>
+        <version>${swagger.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-core-jakarta</artifactId>
+        <version>${swagger.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
         <groupId>org.silverpeas</groupId>
         <artifactId>silverpeas-dependencies-bom</artifactId>
         <version>${silverpeas.bom.version}</version>
@@ -122,6 +134,9 @@
   </dependencyManagement>
 
   <properties>
+    <!-- Swagger generates the documentation of the REST API, Redoc renders it -->
+    <swagger.version>2.2.54</swagger.version>
+    <redoc.version>2.5.0</redoc.version>
     <!-- property used by the CI to both deploy a build version and release the next stable version -->
     <next.release>2.0</next.release>
     <silverpeas.bom.version>2.0-SNAPSHOT</silverpeas.bom.version>
@@ -196,6 +211,35 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.2.0</version>
+          <executions>
+            <!-- a module publishing the documentation of the REST API publishes nothing else:
+                 what the Maven site brings along is dropped once the site has been built, before
+                 it gets published -->
+            <execution>
+              <id>strip-maven-site</id>
+              <phase>post-site</phase>
+              <goals>
+                <goal>clean</goal>
+              </goals>
+              <configuration>
+                <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                <filesets>
+                  <fileset>
+                    <directory>${project.build.directory}/site</directory>
+                    <includes>
+                      <include>**</include>
+                    </includes>
+                    <excludes>
+                      <exclude>index.html</exclude>
+                      <exclude>openapi.json</exclude>
+                      <exclude>openapi.yaml</exclude>
+                      <exclude>redoc.standalone.js</exclude>
+                    </excludes>
+                  </fileset>
+                </filesets>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -284,6 +328,49 @@
               </tag>
             </tags>
           </configuration>
+        </plugin>
+        <plugin>
+          <!-- Swagger Core produces the OpenAPI specification of the REST services from both
+               the JAX-RS and the OpenAPI annotations. Its resolve goal is bound to the compile
+               phase and forks no compilation: the specification can hence not be produced by the
+               site lifecycle alone. -->
+          <groupId>io.swagger.core.v3</groupId>
+          <artifactId>swagger-maven-plugin-jakarta</artifactId>
+          <version>${swagger.version}</version>
+          <configuration>
+            <!-- the document the scan completes: it carries the info section OpenAPI requires,
+                 which this plugin has no parameter to fill in -->
+            <openapiFilePath>${project.build.directory}/openapi-base/openapi.yaml</openapiFilePath>
+            <outputFileName>openapi</outputFileName>
+            <outputPath>${project.build.directory}/openapi</outputPath>
+            <!-- both are provided by core-rs, on which any project documenting its REST API
+                 depends -->
+            <modelConverterClasses>org.silverpeas.core.rs.doc.JaxbAwareModelResolver</modelConverterClasses>
+            <filterClass>org.silverpeas.core.rs.doc.CommonResponsesFilter</filterClass>
+            <outputFormat>JSONANDYAML</outputFormat>
+            <prettyPrint>true</prettyPrint>
+            <sortOutput>true</sortOutput>
+            <openapi31>true</openapi31>
+            <!-- otherwise the operations that aren't annotated carry only a default response -->
+            <defaultResponseCode>200</defaultResponseCode>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>process-classes</phase>
+              <goals>
+                <goal>resolve</goal>
+              </goals>
+            </execution>
+          </executions>
+          <dependencies>
+            <dependency>
+              <!-- the scan by reflection loads the classes of the project, some of them
+                   referring RESTEasy types that are absent from the classpath of the plugin -->
+              <groupId>org.jboss.resteasy</groupId>
+              <artifactId>resteasy-core</artifactId>
+              <version>6.2.14.Final</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
