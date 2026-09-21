@@ -137,6 +137,8 @@
     <!-- Swagger generates the documentation of the REST API, Redoc renders it -->
     <swagger.version>2.2.54</swagger.version>
     <redoc.version>2.5.0</redoc.version>
+    <!-- only a module publishing the documentation of the REST API strips its Maven site -->
+    <strip.maven.site.skip>true</strip.maven.site.skip>
     <!-- property used by the CI to both deploy a build version and release the next stable version -->
     <next.release>2.0</next.release>
     <silverpeas.bom.version>2.0-SNAPSHOT</silverpeas.bom.version>
@@ -214,7 +216,11 @@
           <executions>
             <!-- a module publishing the documentation of the REST API publishes nothing else:
                  what the Maven site brings along is dropped once the site has been built, before
-                 it gets published -->
+                 it gets published. The clean plugin being part of the default lifecycle, this
+                 execution applies to any project inheriting from this POM and would then wipe out
+                 the Maven site of such a project; it is hence disabled by default and only a
+                 module documenting the REST API opts in it by setting strip.maven.site.skip to
+                 false -->
             <execution>
               <id>strip-maven-site</id>
               <phase>post-site</phase>
@@ -222,6 +228,7 @@
                 <goal>clean</goal>
               </goals>
               <configuration>
+                <skip>${strip.maven.site.skip}</skip>
                 <excludeDefaultDirectories>true</excludeDefaultDirectories>
                 <filesets>
                   <fileset>
